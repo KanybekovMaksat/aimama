@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Мама — листовка A5 для родителей Codify</title>
+<meta name="description" content="Двусторонняя листовка A5 для мам студентов Codify: что такое ИИ, формула запроса, готовые запросы, словарик, сайты, бесплатная AI-диагностика и курс AI Start.">
+<style>
+/* ---------- Шрифт: Nunito Variable (шрифт приложения Codify), встроен ---------- */
+@font-face { font-family: "Nunito"; font-style: normal; font-weight: 200 1000; font-display: block;
+  src: url(data:font/woff2;base64,{{FONT_CYR}}) format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Nunito"; font-style: normal; font-weight: 200 1000; font-display: block;
+  src: url(data:font/woff2;base64,{{FONT_LAT}}) format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+/* ---------- Система: 4 размера шрифта, 3 веса, одна линия, один акцент ---------- */
+:root {
+  --brand: #2e44d1;       /* blue-700 */
+  --brand-deep: #0a1058;  /* blue-950 */
+  --ink: #0e1a47;
+  --ink-soft: #5a6689;
+  --line: #dde2ef;
+  --surface: #ffffff;
+  --pink: #fb64b6;
+
+  --fs-display: 30pt;   /* заголовок листовки */
+  --fs-title: 14pt;     /* название курса, заголовок плашки */
+  --fs-body: 9.2pt;     /* всё, что читают */
+  --fs-label: 7pt;      /* подписи разделов, капители */
+
+  --lh: 1.3;
+  --row: 1.3mm;         /* вертикальный отступ строки таблицы */
+  --gap: 4.2mm;         /* расстояние между разделами */
+
+  --sheet-w: 148mm;
+  --sheet-h: 210mm;
+  --pad: 9.5mm;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: #c9d2e8;
+  color: var(--ink);
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: var(--lh);
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+b, strong { font-weight: 800; }
+
+/* ---------- Экран ---------- */
+.bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 10px 16px; background: var(--ink); color: #fff; font-size: 13px; }
+.bar b { font-weight: 800; }
+.bar .soft { color: #b8c2e6; }
+.bar button { margin-left: auto; cursor: pointer; border: 0; border-radius: 999px; padding: 8px 16px; font: inherit; font-weight: 800; color: var(--ink); background: #fff; }
+.spread { display: flex; flex-wrap: wrap; gap: 14mm; justify-content: center; padding: 10mm 6mm 16mm; }
+.sheet {
+  position: relative; width: var(--sheet-w); height: var(--sheet-h); overflow: hidden;
+  background-color: var(--surface);
+  background-image:
+    radial-gradient(ellipse 76mm 60mm at 96% 0%, rgba(251,100,182,.18), transparent 70%),
+    radial-gradient(ellipse 66mm 50mm at 0% 100%, rgba(251,100,182,.10), transparent 70%);
+  box-shadow: 0 2mm 8mm rgba(10,16,88,.18);
+  padding: var(--pad); display: flex; flex-direction: column;
+}
+.sheet > * { flex: 0 0 auto; }
+.spring { flex: 1 1 auto; }
+.side-label { position: absolute; top: -6.5mm; left: 0; font-size: 11px; color: #4a5680; font-weight: 800; letter-spacing: .04em; }
+
+/* ---------- Общее ---------- */
+.top { display: flex; align-items: center; justify-content: space-between; height: 6mm; }
+.top .logo { height: 5mm; width: auto; display: block; }
+.hearts-top { height: 4.4mm; width: auto; display: block; }
+
+h2 { font-size: var(--fs-label); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 2mm; }
+section { margin-top: var(--gap); }
+.front section { margin-top: 7mm; }
+.soft { color: var(--ink-soft); font-weight: 600; }
+
+/* таблица: строки с тонкими линиями */
+.table li { display: grid; gap: 3mm; align-items: baseline; padding: var(--row) 0; border-top: .28mm solid var(--line); }
+.table li:last-child { border-bottom: .28mm solid var(--line); }
+.table dt, .table .key { font-weight: 800; color: var(--brand); }
+.table dd, .table .val { color: var(--ink-soft); }
+
+/* ---------- Лицевая ---------- */
+.hero { display: grid; grid-template-columns: 1fr 26mm; gap: 4mm; align-items: center; margin-top: 2mm; }
+.hero h1 { font-size: var(--fs-display); line-height: 1; font-weight: 900; letter-spacing: -.015em; }
+.hero h1 span { color: var(--pink); }
+.hearts { width: 26mm; height: 15mm; display: block; }
+
+.facts li { grid-template-columns: 7mm 1fr; }
+.facts .n { font-weight: 800; color: var(--brand); font-variant-numeric: tabular-nums; }
+.facts b { color: var(--ink); }
+
+.formula { display: grid; grid-template-columns: repeat(4, 1fr); }
+.formula li { position: relative; padding: 0 2.6mm 0 0; }
+.formula li + li { padding-left: 3.4mm; }
+.formula li + li::before { content: "+"; position: absolute; left: -1.4mm; top: 55%; transform: translateY(-50%); color: var(--brand); font-weight: 700; }
+.formula small { display: block; font-size: var(--fs-label); font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: .4mm; }
+.formula b { display: block; }
+.example { margin-top: 1.8mm; color: var(--ink-soft); }
+
+.prompts li { display: block; }
+.prompts b { display: block; color: var(--ink); }
+.prompts p { color: var(--ink-soft); }
+
+/* единственная плашка */
+.offer {
+  margin-top: 4mm; border-radius: 4mm; color: #fff;
+  background: linear-gradient(118deg, var(--brand-deep) 0%, #1b2a9e 60%, var(--brand) 100%);
+  padding: 3.8mm 4.4mm;
+  display: grid; grid-template-columns: 1fr 22mm; gap: 4.4mm; align-items: center;
+}
+.offer .kicker { font-size: var(--fs-label); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: #a9c6ff; }
+.offer h3 { font-size: var(--fs-title); font-weight: 900; line-height: 1.1; margin-top: 1.6mm; letter-spacing: -.01em; }
+.offer p { margin-top: 1.2mm; color: #d6dfff; }
+.offer .phone { margin-top: 2.6mm; display: flex; align-items: center; gap: 2.2mm; font-size: var(--fs-title); font-weight: 900; letter-spacing: .01em; }
+.offer .phone svg { width: 5mm; height: 5mm; }
+.qr { background: #fff; border-radius: 2.6mm; padding: 1.4mm; display: grid; gap: .6mm; justify-items: center; }
+.qr svg { width: 100%; height: auto; display: block; shape-rendering: crispEdges; }
+.qr small { color: var(--ink-soft); font-size: 5.8pt; font-weight: 800; text-align: center; line-height: 1.15; }
+
+/* ---------- Оборот ---------- */
+.terms li { grid-template-columns: 32mm 1fr; }
+.tools li { grid-template-columns: 26mm 1fr auto; }
+.tools .url { color: var(--brand); font-weight: 700; white-space: nowrap; }
+
+.course .head { display: flex; align-items: baseline; gap: 2.6mm; margin-bottom: 1.6mm; }
+.course h3 { font-size: var(--fs-title); font-weight: 900; letter-spacing: -.01em; }
+.course .head span { color: var(--ink-soft); }
+.course p { max-width: 64ch; }
+.course p + p { margin-top: 1.4mm; }
+
+.foot { display: grid; grid-template-columns: 1fr 1fr 18mm; gap: 6mm; align-items: start; border-top: .28mm solid var(--line); padding-top: 3.4mm; margin-top: var(--gap); }
+.foot h3 { font-size: var(--fs-label); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 2mm; }
+.foot ul { display: grid; gap: 1.2mm; color: var(--ink-soft); align-content: start; }
+.foot li b { color: var(--ink); }
+.contacts li { display: flex; align-items: center; gap: 2mm; color: var(--ink); }
+.contacts svg { width: 3.8mm; height: 3.8mm; color: var(--brand); flex: 0 0 auto; }
+.contacts .big { font-weight: 800; }
+.foot .qr { padding: .8mm; align-self: end; }
+.foot .qr small { font-size: 5.6pt; }
+
+/* ---------- Печать ---------- */
+@page { size: 148mm 210mm; margin: 0; }
+@media print {
+  body { background: none; }
+  .bar, .side-label { display: none; }
+  .spread { display: block; padding: 0; }
+  .sheet { box-shadow: none; margin: 0; page-break-after: always; break-after: page; }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>AI Мама</b>
+  <span class="soft">Листовка A5 · две стороны · для родителей студентов Codify</span>
+  <span class="soft">Печать: A5 без полей, цветная, двусторонняя, переворот по короткому краю. В диалоге печати выключите «Заголовки и колонтитулы» и включите «Фон».</span>
+  <button type="button" onclick="window.print()">Печать / сохранить PDF</button>
+</div>
+
+<div class="spread">
+
+<!-- ======================= ЛИЦЕВАЯ ======================= -->
+<article class="sheet front">
+  <div class="side-label">ЛИЦЕВАЯ СТОРОНА</div>
+
+  <header class="top">
+    {{LOGO}}
+  </header>
+
+  <div class="hero">
+    <h1>AI <span>Мама</span></h1>
+    {{HEARTS_HERO}}
+  </div>
+
+  <section>
+    <h2>Что такое ИИ</h2>
+    <p class="soft">Программа, которая прочитала почти весь интернет и научилась отвечать как человек. Три вещи, которые стоит знать:</p>
+    <ol class="table facts" style="margin-top:2mm">
+      <li><span class="n">01</span><span><b>Ему можно писать как человеку.</b> <span class="soft">Обычными словами, без команд.</span></span></li>
+      <li><span class="n">02</span><span><b>Он ошибается с уверенным видом.</b> <span class="soft">Даты, цифры и цитаты проверяйте.</span></span></li>
+      <li><span class="n">03</span><span><b>Он не человек.</b> <span class="soft">Не чувствует, не помнит вас. Решение всегда за вами.</span></span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Формула хорошего запроса</h2>
+    <ol class="formula">
+      <li><small>Роль</small><b>Ты учитель</b></li>
+      <li><small>Задача</small><b>Объясни дроби</b></li>
+      <li><small>Контекст</small><b>ребёнку 10 лет</b></li>
+      <li><small>Формат</small><b>Три примера</b></li>
+    </ol>
+    <p class="example">«Ты учитель. Объясни дроби ребёнку 10 лет. Три примера».</p>
+  </section>
+
+  <section>
+    <h2>Попробуйте сегодня вечером</h2>
+    <ol class="table prompts">
+      <li><b>Меню на неделю</b><p>«Ты семейный повар. Составь меню на неделю для семьи из четырёх человек, двое детей, без орехов. Таблица по дням и список покупок».</p></li>
+      <li><b>Письмо учителю</b><p>«Ты вежливый родитель. Напиши сообщение классному руководителю: сын пропустит два дня по болезни. Коротко и с благодарностью».</p></li>
+      <li><b>Домашка по математике</b><p>«Ты учитель математики. Объясни дроби ребёнку 10 лет, который любит футбол. Три примера и одна задачка с ответом».</p></li>
+    </ol>
+  </section>
+
+  <div class="spring"></div>
+
+  <aside class="offer">
+    <div>
+      <div class="kicker">Бесплатно · 60 минут</div>
+      <h3>AI-диагностика навыков ребёнка</h3>
+      <p>Логика, креативность, общение. Запись в WhatsApp.</p>
+      <div class="phone">{{ICO_WA}}+996 500 431 430</div>
+    </div>
+    <div class="qr">
+      {{QR_WA}}
+      <small>Записаться</small>
+    </div>
+  </aside>
+</article>
+
+<!-- ======================= ОБОРОТ ======================= -->
+<article class="sheet back">
+  <div class="side-label">ОБОРОТНАЯ СТОРОНА</div>
+
+  <header class="top">
+    {{HEARTS_TOP}}
+    {{LOGO}}
+  </header>
+
+  <section>
+    <h2>Словарик: 5 слов про ИИ</h2>
+    <dl class="table terms">
+      <li><dt>Промпт</dt><dd>Ваш запрос к ИИ.</dd></li>
+      <li><dt>Агент</dt><dd>ИИ, который действует, а не только отвечает.</dd></li>
+      <li><dt>Галлюцинация</dt><dd>Уверенная выдумка ИИ.</dd></li>
+      <li><dt>Дипфейк</dt><dd>Поддельное видео или голос.</dd></li>
+      <li><dt>Вайбкодинг</dt><dd>Ребёнок описывает, ИИ пишет код.</dd></li>
+    </dl>
+  </section>
+
+  <div class="spring"></div>
+
+  <section>
+    <h2>Сайты: что на каком делать</h2>
+    <dl class="table tools">
+      <li><dt>ChatGPT</dt><dd>Спросить, написать, объяснить.</dd><dd class="url">chatgpt.com</dd></li>
+      <li><dt>Perplexity</dt><dd>Найти ответ со ссылками на источники.</dd><dd class="url">perplexity.ai</dd></li>
+      <li><dt>Canva</dt><dd>Открытка, афиша, презентация.</dd><dd class="url">canva.com</dd></li>
+      <li><dt>Suno</dt><dd>Песня по вашим словам.</dd><dd class="url">suno.com</dd></li>
+      <li><dt>ElevenLabs</dt><dd>Озвучить текст живым голосом.</dd><dd class="url">elevenlabs.io</dd></li>
+      <li><dt>Lovable</dt><dd>Сайт по описанию, без кода.</dd><dd class="url">lovable.dev</dd></li>
+      <li><dt>NotebookLM</dt><dd>Конспект и вопросы по учебнику.</dd><dd class="url">notebooklm.google.com</dd></li>
+    </dl>
+  </section>
+
+  <div class="spring"></div>
+
+  <section class="course">
+    <h2>Курс Codify для вашего ребёнка</h2>
+    <div class="head"><h3>AI Start</h3><span>11–17 лет · 4 месяца</span></div>
+    <p>Ребёнок учится программировать и работать с ИИ на своих проектах: делает игру, сайт и чат-бота. Главное, чему учится: не просто пользоваться ИИ, а проверять его и доводить идею до результата.</p>
+  </section>
+
+  <div class="spring"></div>
+
+  <footer class="foot">
+    <div>
+      <h3>Записаться</h3>
+      <ul class="contacts">
+        <li class="big">{{ICO_WA}}+996 500 431 430</li>
+        <li>{{ICO_IG}}@codify.kids</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Три филиала в Бишкеке</h3>
+      <ul>
+        <li><b>7-й микрорайон, 26/2</b></li>
+        <li><b>Ибраимова 115</b>, БЦ Асыл-Таш</li>
+        <li><b>Джал, Тыналиева 2/7</b></li>
+      </ul>
+    </div>
+    <div class="qr">
+      {{QR_SITE}}
+      <small>codifylab.com</small>
+    </div>
+  </footer>
+</article>
+
+</div>
+</body>
+</html>
