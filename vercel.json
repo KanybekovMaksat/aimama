@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/", "destination": "/ai-family-A5.html" }]
+}
